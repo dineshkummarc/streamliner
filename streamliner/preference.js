@@ -11,24 +11,25 @@
 	@param {StreamlinerDatastore} [datastore] Provides interface for reading/writing to store
 	@returns StreamlinerPreferences
 */
-Streamliner.Preferences = function ( id, datastore ) {
-	this.id = id;
-	this.store = datastore;
-	this.cache = null;
-}
-
-Streamliner.Preferences.prototype.load = function () {
-	this.cache = JSON.parse(this.store.get(this.id));
-}
-
-Streamliner.Preferences.prototype.get = function (key) {
-	return this.cache[key];
-}
-
-Streamliner.Preferences.prototype.set = function (key, val) {
-	this.cache[key] = val;
-	this.store.set(this.id, JSON.stringify(this.cache));
-	return true;
-}
-
-
+Streamliner.Preferences = Base.extend({
+	constructor: function ( id, datastore ) {
+		this.id = id;
+		this.store = datastore;
+		this.cache = null;
+	},
+	id: null,
+	store: null,
+	cache: null,
+	load: function () {
+		this.cache = JSON.parse(this.store.get(this.id));
+	},
+	get: function (key) {
+		return this.cache[key];
+	},
+	set: function (key, val) {
+		this.cache[key] = val;
+		this.store.set(this.id, JSON.stringify(this.cache));
+		return true;
+	}
+});
+	

@@ -4,14 +4,16 @@
 	Licensed under MIT license (see MIT-LICENSE.txt)
 */
 
-Streamliner.Event = function (type) {
-	this.type = type;
-	var ev = document.createEvent("HTMLEvents");
-    ev.initEvent(this.type, false, false);
-	this.event = ev;
-}
 
-
-Streamliner.Event.prototype.fire = function () {
-    document.dispatchEvent(this.event);
-}
+Streamliner.Event = Base.extend({
+	constructor: function (type) {
+		this.type = type;
+		var ev = document.createEvent("HTMLEvents");
+	    ev.initEvent(this.type, false, false);
+		this.event = ev;		
+	},
+	type: null,
+	fire: function () {
+		document.dispatchEvent(this.event);
+	}
+});

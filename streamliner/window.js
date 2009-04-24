@@ -4,14 +4,16 @@
 	Licensed under MIT license (see MIT-LICENSE.txt)
 */
 
-Streamliner.Window = function () {
+Streamliner.Window = Base.extend({
+	constructor: function ( options ) {
+		
+	},
 	
-}
-
-Streamliner.Window.prototype.open = function() {
+	open: function () {
+		
+	},
 	
-}
-
-Streamliner.Window.prototype.close = function() {
-	
-}
+	close: function () {
+		
+	}
+});

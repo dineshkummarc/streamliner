@@ -4,8 +4,7 @@
 	Licensed under MIT license (see MIT-LICENSE.txt)
 */
 
-Streamliner.Poller = Base.extend({
-	constructor: function () {
-		
-	}
-});
+/*
+	Utils namespace
+*/
+Streamliner.Utils = {};

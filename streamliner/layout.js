@@ -6,14 +6,31 @@
 
 /*
 	Streamliner.LayoutManager (Singleton)
+	You'd only have one LayoutManager per window. 
 */
-Streamliner.LayoutManager = function () {
-	
-}
+Streamliner.LayoutManager = Base.extend({
+	constructor: function (options) {
+		
+	}
+});
 
 /*
-
+	Streamliner.Layout types
 */
-Streamliner.Layout = function () {
+Streamliner.Layout = { }
+
+Streamliner.Layout.Generic = Base.extend({
+	constructor: function(options){
+		
+	}
+});
+
+/*
+	Stacked Layout allows new "cards" to be inserted into the deck
+	Only one card is ever visible. Transitions can be performed between
+	different cards in the deck.
+*/
+Streamliner.Layout.Stacked = Streamliner.Layout.Generic.extend({
 	
-}
+});
+
